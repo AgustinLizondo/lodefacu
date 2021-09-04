@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
+
+$mainColor: #04202C;
+$secondaryColor: #537072;
+$terciaryColor: #8E9B97;
+$background: #F4EBDB;
+
+*{
+    background: $background;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+@mixin all{
+    margin: 16px;
+}
+@mixin transition1s {
+    transition: all 1s;
+}
+#upArrow{
+    position: absolute;
+    background: $secondaryColor;
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 100%;
+    opacity: .5;
+    right: 32px;
+    bottom: 32px;
+    position: fixed;
+    @include transition1s();
+    &:hover{
+        @include transition1s();
+        opacity: 1;
+    }
+}
+.shown{
+    transform: translateX(0%);
+    opacity: 1;
+    @include transition1s();
+}
+header{
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px $terciaryColor;
+    position: relative;
+    img{
+        width: 32px;
+        height: 32px;
+        @include all();
+    }
+    h1{
+        color: $mainColor;
+        position: relative;
+        @include all();
+    }
+    i{
+        color: $mainColor;
+        position: relative;
+        font-size: 32px;
+        @include all();
+    }
+    nav{
+        top: 64px;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(4, 32, 44, .9);
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transform: translateX(-100%);
+        @include transition1s();
+        ul{
+            background: none;
+            list-style: none;
+            li{
+                background: none;
+                @include all();
+                border-bottom: 1px solid #ccc;
+                a{
+                    background: none;
+                    font-size: 24px;
+                    text-decoration: none;
+                    color: $background;
+                }
+            }
+        }
+    }
+}
+.menuExamples{
+    display: flex;
+    flex-wrap: wrap;
+    h2{
+        text-align: center;
+        @include all();
+        color: $mainColor;
+    }
+    .plateDiv{
+        width: 76vw;
+        background: $mainColor;
+        padding: 16px;
+        display: block;
+        margin: 8px auto;
+        border-radius: 16px;
+        h3{
+            color: $mainColor;
+            text-align: center;
+            padding: 8px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+        }
+        img{
+            display: block;
+            margin: 8px auto 0 auto;
+            width: 64vw;
+            border-radius: 16px;
+            @include transition1s();
+            &:hover{
+                transform: scale(1.05);
+                @include transition1s();
+            }
+        }
+    }
+}
+.ourMenu{
+    .menuBox{
+        background: $background;
+        img{
+            @include all();
+            width: calc(100vw - 32px);
+        }
+    }
+}
+.aboutUs{
+    @include all();
+    background: $mainColor;
+    padding: 16px;
+    border-radius: 24px;
+    .textBox{
+        background: $background;
+        padding: 16px;
+        border-radius: 24px;
+        h2{
+            text-align: center;
+            color: $mainColor;
+            background: none;
+        }
+        h3{
+            text-justify: justify;
+            color: $mainColor;
+            background: none;
+        }
+    }
+}
+#sucursales{
+    background: $background;
+    .sucursales{
+        img{
+            @include all();
+            width: calc(100vw - 32px);
+        }
+    }
+}
+.contact{
+    .socialNetworks{
+        display: flex;
+        flex-wrap: wrap;
+        i{
+            color: $mainColor;
+            font-size: 24px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 8px;
+        }
+    }
+}
+footer{
+    color: $mainColor;
+    padding: 8px;
+    text-align: center;
+}
