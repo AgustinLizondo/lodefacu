@@ -18,10 +18,10 @@ upArrow.addEventListener('click',()=>{
     window.scrollTo(0, 0)
 });
 
-let instagramButton = document.querySelector('fa-instagram-square');
-let facebookButton = document.querySelector('fa-facebook-square');
-let whatsappButton = document.querySelector('fa-whatsapp-square');
-let pedidosyaButton = document.querySelector('fa-motorcycle');
+let instagramButton = document.getElementById('instagramButton');
+let facebookButton = document.getElementById('facebookButton');
+let whatsappButton = document.getElementById('whatsappButton');
+let pedidosyaButton = document.getElementById('pedidosyaButton');
 
 instagramButton.addEventListener('click', ()=>{
     window.open('https://www.instagram.com/lodefacu/', '_blank');
